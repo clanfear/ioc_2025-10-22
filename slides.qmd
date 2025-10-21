@@ -60,6 +60,8 @@ usa <- fifty_states |>
 
 ## Private party gun sales
 
+&nbsp;
+
 85% of the guns used in a crime that are recovered by the police were sold at least once through a private party transaction (Wintemute, Braga, and Kennedy 2010).
 
 &nbsp;
@@ -70,10 +72,11 @@ Steven Dettelbach, ATF Director, 10 Apr 2024
 
 ## {.dark-slide}
 
+&nbsp;
 
 ![](img/nyt_gun-show-loophole.jpg)
 
-##
+## {.dark-slide}
 
 > I’ve spent hours with families who’ve lost loved ones to gun violence. They all have the same message: ‘Do something.’ Today, my Administration is taking action to make sure fewer guns are sold without background checks.
 
@@ -111,8 +114,10 @@ Vice President Harris, 10 Apr 2024
 
 **Private Sellers**
 
-* No licenses
-* Checks required in 21 states and DC
+* Anyone else
+* No license needed
+* Checks in 21 states and DC
+   * Transacted via FFL holder
 * Not required in 29 states
 
 :::
@@ -122,13 +127,13 @@ Vice President Harris, 10 Apr 2024
 *13% of recent firearm purchases in the US occurred without a background check, including 50% of private purchases made... outside of stores*
 :::
 
-## Policy landscape before May 20
+## Background checks before May 20
 
 ```{r, dev = "ragg_png"}
 col_vec = c("Eligible"= "#da9262", "Pre-Existing"= "#7eb7cc")
 ggplot(usa) +
   geom_polygon(aes(x = long, y = lat, group = group, fill = eligible), color = "#333d4d", linewidth = 0.25) +
-  scale_fill_manual(values = col_vec, name = NULL, labels = c("Eligible" = "Not required", "Pre-Existing" = "Checks required")) +
+  scale_fill_manual(values = col_vec, name = NULL, labels = c("Eligible" = "Not required", "Pre-Existing" = "Universal checks")) +
   coord_cartesian(ratio = 1.3) +
   theme_void(base_size = 16) +
   theme(legend.position = "inside",
@@ -139,14 +144,17 @@ ggplot(usa) +
 
 ## The policy: Redefinition of dealers
 
-Policy announced April 10, took effect May 20
+
 
 &nbsp;
 
-> You will need a license if you are devoting time, attention, and labor to dealing in firearms as a regular course of trade or business to **predominantly earn a profit** through the repetitive purchase and resale of firearms... By contrast, if you make only occasional resales of firearms to enhance your personal collection or if you liquidate your personal collection (without restocking), you do not need to be licensed” (ATF 2024, p. i)
+> You will need a license if you are devoting time, attention, and labor to dealing in firearms as a regular course of trade or business to **predominantly earn a profit** through the repetitive purchase and resale of firearms... By contrast, if you make only occasional resales of firearms to enhance your personal collection or if you liquidate your personal collection (without restocking), you do not need to be licensed
+
+ATF 2024
 
 ::: {.center}
-*Private sellers doing so to earn profit now required to obtain FFLs and conduct background checks*
+
+<br>*Private sellers doing so to earn profit anywhere in the country would be required to __obtain FFLs__ and __conduct background checks__*
 :::
 
 
@@ -155,12 +163,25 @@ Policy announced April 10, took effect May 20
 &nbsp;
 
 ::: {.center}
+
+*The policy was announced April 10 and would take effect May 20*
+
+&nbsp;
+
+::: {.fragment}
+
 *A federal lawsuit in Northern District of Texas provided injunctive relief for Texas, Lousiana, Mississippi and Utah*
 
 &nbsp;
 
-*Private sellers in these states would not be required to obtain FFLs or conduct background checks*
 :::
+
+::: {.fragment}
+
+*Private sellers in these states would not be required to obtain FFLs or conduct background checks until the lawsuit was finished*
+:::
+
+::::
 
 ## Policy landscape after May 20
 
@@ -169,7 +190,7 @@ col_vec = c("Affected"= "#4d5d75", "Pre-Existing"= "#7eb7cc", "Injunction" = "#d
 
 ggplot(usa) +
   geom_polygon(aes(x = long, y = lat, group = group, fill = status), color = "#333d4d", linewidth = 0.25) +
-  scale_fill_manual(values = col_vec, name = NULL, labels = c("Affected" = "Newly required", "Pre-Existing" = "Already required", "Injunction"="Injunction")) +
+  scale_fill_manual(values = col_vec, name = NULL, labels = c("Affected" = "Affected by policy", "Pre-Existing" = "Universal checks", "Injunction"="Injunction")) +
   coord_cartesian(ratio = 1.3) +
   theme_void(base_size = 16) +
   theme(legend.position = "inside",
@@ -182,16 +203,17 @@ ggplot(usa) +
 
 &nbsp;
 
-If private individuals are "engaged in the business" of selling, they can...
+If private individuals are "engaged in the business" of selling, they could...
 
-1. Ignore change and continue selling firearms without a license
-2. Stop selling firearms
-3. Obtain FFL to continue selling^[An FFL takes a minimum of two months to obtain]
+
+1. Stop selling firearms
+2. Obtain FFL to continue selling^[An FFL takes a minimum of two months to obtain]
+3. Ignore change and continue selling firearms without a license
 
 &nbsp;
 
 ::: {.center}
-*A decline in private dealers should increase background checks as buyers turn to FFLs.*
+*Declines in private sales should increase background checks as buyers turn to FFLs*
 :::
 
 ## Our focus
@@ -199,7 +221,7 @@ If private individuals are "engaged in the business" of selling, they can...
 &nbsp;
 
 :::: {.center}
-*Fewer firearms sold without background checks may reduce less gun violence*
+*Fewer firearms sold without background checks may reduce gun violence*
 
 ::: {.fragment}
 
@@ -212,7 +234,7 @@ If private individuals are "engaged in the business" of selling, they can...
 
 &nbsp;
 
-*So we're focusing on the proximal mediator: __legal gun markets__*
+*So we're focusing on proximal mechanism: effects on __legal gun markets__*
 :::
 
 ::::
@@ -241,18 +263,29 @@ As a result of the rule change...
 
 ## Data
 
-* FFL lists from ATF
+* **FFL lists** from ATF
    * Number of new licenses
-* NICS background checks from FBI
+* **NICS background checks** from FBI
    * Number of background checks for firearm purchases
 * Firearm sale listings from **Armslist.com**
    * Number of new private listings
    * Number of new dealer listings
 
+&nbsp;
+
+:::: {.center}
+::: {.fragment}
+*Dave K. is leading the first two*<br>
+:::
+::: {.fragment}
+*I am leading on Armslist*
+:::
+::::
+
 # Arsmlist
 
 
-## Craigslist for guns
+## Craigslist for guns^["Guntree" for the Brits]
 
 ![](img/armslist-main.png)
 
@@ -290,7 +323,7 @@ As a result of the rule change...
 **Scraper**
 
 * Scrape of live listings every few days *since 2021*
-* VPN rotation to evade blocks
+* VPN rotation to evade blocks and region lock
 * Relational database for storage
 
 ## What we got
@@ -314,47 +347,87 @@ As a result of the rule change...
 
 :::
 
+&nbsp;
+
 ::: {.fragment .center}
 *We're doing a pilot now*
 :::
+
+::: {.fragment .center}
+*I really hope it works*
+:::
+
 # FFLs and Background Checks
 
-## Analytical approach
+## Basic design
 
-Difference-in-difference
-* Single tratment effect coefficient; ATT across 12 month period
+&nbsp;
 
-Event study
-* ATT in each month before and after rule change
-* an assess parallel trends; should be no lead effects
-* Can see timing, e.g., delayed effect or anticipation
+**Treatment group:** 25 states without universal background checks as of May 20, 2024 and which did not receive injunctive relief
 
-Treatment group: 25 stats without universal background checks as of May 20, 2024 and which did not receive injunctive relief
+**Control group:** 21 states and DC with universal checks
 
-Compare treated group to untreated
+&nbsp;
 
-Identifying assumption: In absence of rule change, average untreated potential outcomes for treated states and control group would hav efollowed parallel paths in post-treatment periods.
+::: {.fragment}
 
-## {.dark-slide}
-
-Treatment map
-
-## Estimand
-
-
-DID Plot?
-
-
-::: {.center}
-
-*The average difference in the outcome for the treated states in the 12 month pre-treatment period versus after the 12 months after the rule change, minus the average difference for the control group over the same time period.*
+**Estimand**: *The average effect of the policy change on the treated states*
 
 :::
 
-## Poisson Pseudo-MLE (PPML)
+&nbsp;
+
+::: {.fragment}
+**Identifying Assumption:** *In the absence of the rule change, the average untreated potential outcomes for treated states and the control group would have followed parallel paths following treatment*
+:::
+
+## Two analyses
+
+&nbsp;
+
+**Difference-in-differences** (DiD)
+
+* Classic TWFE estimator
+* Single treatment effect coefficient: ATT across 12 month period
+
+
+
+::: {.fragment text-align="left"}
+
+**Event study**
+
+* ATT in each month before and after rule change
+* Can assess parallel trends; should be no lead effects
+* Can see timing, e.g., delayed effect or anticipation
+
+:::
+
+
+
+
+## Treatment groups
+
+```{r}
+col_vec = c("Affected"= "#4d5d75", "Pre-Existing"= "#7eb7cc", "Injunction" = "#da9262")
+
+ggplot(usa) +
+  geom_polygon(aes(x = long, y = lat, group = group, fill = status), color = "#333d4d", linewidth = 0.25) +
+  scale_fill_manual(values = col_vec, name = NULL, labels = c("Affected" = "Treatment group", "Pre-Existing" = "Control group", "Injunction"="Omitted")) +
+  coord_cartesian(ratio = 1.3) +
+  theme_void(base_size = 16) +
+  theme(legend.position = "inside",
+        legend.position.inside = c(0.87, 0.15),
+        plot.background = element_rect(fill = "#fff5e5", color = "#fff5e5"),
+        panel.background = element_rect(fill = "#fff5e5", color = "#fff5e5"))
+```
+
+
+
+## DiD: Poisson pseudo-MLE (PPML)
 
 $$
-log(\mathbb{E}[y_{st}]) = \alpha + \beta D_{st} + \theta_s + \gamma_t
+y_{st} \sim Pois(\mathbb{E}[y_{st}]) \\
+\mathbb{E}[y_{st}] = exp(\alpha + \beta D_{st} + \theta_s + \gamma_t)
 $$
 
 :::: {.columns}
@@ -383,10 +456,15 @@ $$
 
 ::::
 
-## PPML Event Study
+::: {.aside}
+Standard errors clustered at the state level
+:::
+
+## Event Study PPML 
 
 $$
-log(\mathbb{E}[y_{st}]) = \alpha + \sum_{k=-12}^{12} \left(\beta_kD_{st}^k\right) + \theta_s + \gamma_t
+y_{st} \sim Pois(\mathbb{E}[y_{st}]) \\
+\mathbb{E}[y_{st}] = exp\left(\alpha + \sum_{k=-12}^{12} \left(\beta_kD_{st}^k\right) + \theta_s + \gamma_t\right)
 $$
 
 Same as before except:
@@ -408,19 +486,40 @@ Same as before except:
 
 ## FFL DiD
 
-Table 1. DiD Estimates: New FFLs
-	Coef. 	Std. Err.
-Treat	0.103	0.059
+&nbsp;
 
-Constant	1.750***	0.020
-Observations
-Clusters	1150
-46	
++----------------+-----------+--------------------+
+|                | Coef      | Std. Err.          |
++================+===========+====================+
+| Treatment      | 0.103     | 0.059              |
++----------------+-----------+--------------------+
+| Constant       | 1.750***  | 0.020              |
++----------------+-----------+--------------------+
+| *Observations* | 1150      |                    |
++----------------+-----------+--------------------+
+| *Clusters*     | 46        |                    |
++----------------+-----------+--------------------+
+
+: DiD Estimates: New FFLs {#tbl-ffldid}
+
+&nbsp;
+
+::: {.center}
+*Tiny insignificant treatment effect*
+:::
+
+::: {.aside}
+DC is omitted because no new FFLs were observed
+:::
+
 
 ## FFL Event Study
 
 ![](img/ffl_event-study.jpg)
 
+::: {.center}
+*Nothing here either*
+:::
 
 ::: {.notes}
 
@@ -432,60 +531,130 @@ Rambachan and Roth test suggests results would be sensitive to relatively weak c
 
 ## Checks DiD
 
-Table 2. DiD Estimates: Background Checks
-	Coef.	Std. Err.
-Treat	0.004	0.020
+&nbsp;
 
++----------------+-----------+--------------------+
+|                | Coef      | Std. Err.          |
++================+===========+====================+
+| Treatment      | 0.004     | 0.020              |
++----------------+-----------+--------------------+
+| Constant       | 10.352*** | 0.006              |
++----------------+-----------+--------------------+
+| *Observations* | 1150      |                    |
++----------------+-----------+--------------------+
+| *Clusters*     | 46        |                    |
++----------------+-----------+--------------------+
 
-Constant	10.352***	0.006
-Observations
-Clusters	1150
-46	
+: DiD Estimates: Background Checks {#tbl-ffldid}
+
+&nbsp;
+
+::: {.center}
+*Near-zero insignificant treatment effect*
+:::
+
+::: {.aside}
+Hawaii is omitted because no background checks were observed
+:::
 
 
 ## Checks Event Study
 
 ![](img/bg-check_event-study.jpg)
 
+
+::: {.center}
+*A tiny delayed increase, but estimates are sensitive*
+:::
+
 # Discussion
 
-## Didn't do anything
+## Why didn't it do anything?
 
-## Why?
+&nbsp;
 
-(1) the nature of the rule change was ambiguous, leading some people to believe that nothing had really changed;
+Candidate explanations:
 
-(2) the rule change had little deterrent effect because it was minimally enforced, perceived to be minimally enforced, or because sellers were unaware of the change;
+::: {.incremental}
 
-(3) not that many sellers were affected by the rule change (i.e., few private sellers were actually redefined as being “engaged in the business” of dealing firearms to “predominantly earn a profit”). 
+1. The nature of the rule change was ambiguous, leading some people to believe that **nothing had really changed**
 
-## {.dark-slide}
+2. The rule change had little deterrent effect because it was **minimally enforced**, perceived to be minimally enforced, or because sellers were unaware of the change
 
-AMBIGUOUS / NOTHING CHANGED
+3. **Few were affected** by the rule change; i.e., few private sellers were actually redefined as being “engaged in the business” of dealing firearms to “predominantly earn a profit”. 
+
+:::
+
+:::: {.fragment}
+::: {.center}
+*So I went and looked at gun forums...*
+:::
+::::
+
+## Nothing changed {.dark-slide .smaller}
+
+&nbsp;
 
 > **Nothing much has really changed.** Private sales are still allowed. I can still post up at a gun show or post a classified to sell off parts of my collection to fund new purchases. The rule doesn't close a loophole, it just creates (or really mostly restates) the existing rules about straw purchases and operating without a license. The rule was and remains that private sales don't require a background check. And the people regularly buying and selling guns for a profit, or otherwise acting as straw purchasers, were already breaking the law and continue to be breaking the law, and this rule doesn't seem to be creating new mechanisms for identifying and stopping those people. So really this seems like **a preservation of the status quo**... At best I think a bunch of government lawyers got paid to waste a bunch of ink on a rule that will serve as a **symbolic but ultimately meaningless gesture** to people who want to see politicians do something about gun laws, but don’t fundamentally understand gun laws.
 
-- sh1tpost1nsh1t, Reddit's r/law
+sh1tpost1nsh1t, Reddit r/law
 
-## {.dark-slide}
+## No enforcement
 
-MINIMAL ENFORCEMENT / PERCEPTION OF IT / UNAWARE
+&nbsp;
 
-Implementation "dead on arrival"
+Another common thread: the policy is DOA and will never be enforced
 
-FOIA of info on investigations and prosecutions for dealing without FFL (18 U.S.C. §922(a)(1)(A))
+:::: {.fragment}
+
+&nbsp;
+
+::: {.center}
+
+*To find out, we FOIAed the ATF for records on investigations and prosecutions for dealing without FFL as per 18 U.S.C. §922(a)(1)(A)*
+
+:::
+
+::::
+
+&nbsp;
+
+::: {.fragment}
 
 So far no evidence changes:
 
 * 25 cases per month May 2023 to April 2024
 * 26 per month in first 7 months of policy
 
+:::
 
-## {.dark-slide}
+## Few actually affected
 
-Few actually affected
+&nbsp;
 
-## Questions {background-image="img/paisley.png" background-position="bottom" background-size="contain"}
+:::: {.center}
+
+*Perhaps there are few unlicensed people selling "predominately to earn a profit"*
+
+&nbsp;
+
+
+::: {.fragment}
+
+*Our analysis of online gun markets may be suggestive*
+
+:::
+
+::::
+
+## Our conclusion {.dark-slide}
+
+&nbsp;
+
+> the loophole rule change originated in a 2022 bipartisan act of Congress that was spurred by a Covid-era surge in violence. Yet its impact appears negligible. Whether this failure stemmed from the deeply polarized politics of gun regulation, the toothlessness of ATF, or from targeting to narrow a group of sellers remains unclear. Consequently it seems unlikely that the rule change has had any meaningful impact on broader outcomes like firearm violence.
+
+
+## Feedback {background-image="img/paisley.png" background-position="bottom" background-size="contain"}
 
 &nbsp;
 
